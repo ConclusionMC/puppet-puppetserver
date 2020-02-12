@@ -23,7 +23,7 @@ Puppet::Type.type(:puppetserver_config).provide(:augeas, parent: Puppet::Type.ty
     end
   end
 
-  def set_paths(aug) # rubocop:disable Style/AccessorMethodName
+  def set_paths(aug)
     path = '$target'
     resource[:path].split('/').map do |h|
       path << "/@hash[.='#{h}']"
